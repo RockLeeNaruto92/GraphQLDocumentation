@@ -64,3 +64,6 @@ ID này sau đó có thể được sử dụng để làm việc với `node` p
 
 ## Alternatives
 
+Mặc dù ID đã được chứng minh là một pattern mạnh mẽ trong quá khứ, nhưng chúng không phải là pattern duy nhất được sử dụng, cũng như không phù hợp cho mọi tình huống. Chức năng thực sự quan trọng mà client cần là khả năng tạo ra một unique identifier để caching. Thông thường, sẽ đơn giản như việc kết hợp kiểu của object (được truy vấn bằng `__typename`) với một số type-unique identifier (identifier kiểu duy nhất). Mặc dù việc để server lấy ra ID đó sẽ đơn giản hóa client, nhưng client cũng có thể lấy ra từ identifier.
+
+Ngoài ra, nếu thay thế một API hiện có bằng GraphQL API, có thể gây nhầm lẫn nếu tất cả các field trong GraphQL đều giống nhau ngoại trừ `id`. Đây sẽ là một lý do khác khiến người ta có thể chọn không sử dụng `id` như globally unique field.
